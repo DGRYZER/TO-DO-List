@@ -1,0 +1,172 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+#todolistbody {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  margin: 60px auto;
+}
+
+#zoom-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#zoomin, #zoomout {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  background-size: 200% 200%;
+  color: white;
+  font-size: 1rem;
+  transition: background-position 0.5s;
+}
+
+#zoomin:hover, #zoomout:hover {
+  background-position: right center;
+}
+
+#taskenterlevel, label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+#todo-input, #search-input {
+  width: calc(100% - 100px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#todo-input:focus, #search-input:focus {
+  border-color: #dd2a7b;
+  box-shadow: 0 0 10px rgba(221, 42, 123, 0.5);
+  outline: none;
+}
+
+#addbtn, #calendarbtn {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  background-size: 200% 200%;
+  color: white;
+  font-size: 1rem;
+  transition: background-position 0.5s;
+}
+
+#addbtn:hover, #calendarbtn:hover {
+  background-position: right center;
+}
+
+#filtereddata {
+  list-style-type: none;
+  padding: 0;
+}
+
+#filtereddata li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#filtereddata li span {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+#filtereddata li input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+
+#filtereddata li button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  background-size: 200% 200%;
+  color: white;
+  font-size: 0.9rem;
+  transition: background-position 0.5s;
+}
+
+#filtereddata li button:hover {
+  background-position: right center;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #zoom-buttons {
+    flex-direction: column;
+  }
+
+  #zoomin, #zoomout {
+    margin: 10px 0;
+  }
+
+  #todo-input, #search-input, #addbtn, #calendarbtn {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #todolistbody {
+    width: 100%;
+    padding: 15px;
+  }
+}
