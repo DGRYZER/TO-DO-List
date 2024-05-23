@@ -49,6 +49,9 @@ const Todolist = () => {
 
   const zoomStyle = {
     transform: `scale(${zoom / 100})`,
+    transformOrigin: '0 0',
+    width: `${100 / (zoom / 100)}%`,
+    height: `${100 / (zoom / 100)}%`,
   };
 
   const filteredItems = scheduledTasks[selectedDate.toDateString()]?.filter((item) =>
@@ -58,56 +61,56 @@ const Todolist = () => {
   return (
     <div>
       <h1>My TODO LIST</h1>
-      <div style={zoomStyle}>
-        <div id="zoom-buttons">
-          <button onClick={handleZoomIn} id="zoomin">
-            Zoom In
-          </button>
-          <button onClick={handleZoomOut} id="zoomout">
-            Zoom Out
-          </button>
-        </div>
+      <div id="zoom-buttons">
+        <button onClick={handleZoomIn} id="zoomin">
+          Zoom In
+        </button>
+        <button onClick={handleZoomOut} id="zoomout">
+          Zoom Out
+        </button>
       </div>
-      <div id="todolistbody">
-        <label htmlFor="todo-input" id="taskenterlevel">
-          ENTER THE ITEMS
-        </label>
-        <input
-          id="todo-input"
-          type="text"
-          value={inputs}
-          onChange={(e) => setinputs(e.target.value)}
-        />
-        <button onClick={additem} id="addbtn">
-          ADD
-        </button>
-        <button onClick={() => setShowCalendar(!showCalendar)} id="calendarbtn">
-          CALENDAR
-        </button>
-        {showCalendar && (
-          <Calendar onChange={setSelectedDate} value={selectedDate} />
-        )}
-        <div>
-          <label htmlFor="search-input">SEARCH ITEMS</label>
+      <div style={zoomStyle}>
+        <div id="todolistbody">
+          <label htmlFor="todo-input" id="taskenterlevel">
+            ENTER THE ITEMS
+          </label>
           <input
-            id="search-input"
+            id="todo-input"
             type="text"
-            value={searchData}
-            onChange={(e) => setsearchData(e.target.value)}
+            value={inputs}
+            onChange={(e) => setinputs(e.target.value)}
           />
-          <ul id="filtereddata">
-            {filteredItems.map((item, index) => (
-              <li key={index}>
-                <input
-                  type="checkbox"
-                  checked={item.done}
-                  onChange={() => checkboxhandler(selectedDate.toDateString(), index)}
-                />
-                <span>{item.text}</span>
-                <button onClick={() => deleteitem(selectedDate.toDateString(), index)}>DELETE</button>
-              </li>
-            ))}
-          </ul>
+          <button onClick={additem} id="addbtn">
+            ADD
+          </button>
+          <button onClick={() => setShowCalendar(!showCalendar)} id="calendarbtn">
+            CALENDAR
+          </button>
+          {showCalendar && (
+            <Calendar onChange={setSelectedDate} value={selectedDate} />
+          )}
+          <div>
+            <label htmlFor="search-input">SEARCH ITEMS</label>
+            <input
+              id="search-input"
+              type="text"
+              value={searchData}
+              onChange={(e) => setsearchData(e.target.value)}
+            />
+            <ul id="filtereddata">
+              {filteredItems.map((item, index) => (
+                <li key={index}>
+                  <input
+                    type="checkbox"
+                    checked={item.done}
+                    onChange={() => checkboxhandler(selectedDate.toDateString(), index)}
+                  />
+                  <span>{item.text}</span>
+                  <button onClick={() => deleteitem(selectedDate.toDateString(), index)}>DELETE</button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
