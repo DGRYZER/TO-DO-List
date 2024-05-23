@@ -1,3 +1,21 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+This is a TO DO List With the addition of Calender that has been created by using REACT CALENDER Library
+
+Public hosted Link - https://todolist-2503.web.app/
+
+For better understanding check the image
+
+image - 1 👇🏻👇🏻👇🏻👇🏻
+
+![image](https://github.com/DGRYZER/TO-DO-List/assets/91932081/0442a0f6-ab09-4a65-8163-4fdda11e8838)
+
+Image - 2 👇🏻👇🏻👇🏻👇🏻
+
+![image](https://github.com/DGRYZER/TO-DO-List/assets/91932081/12533100-d7f9-4e0c-b96c-c4d1acddc8cc)
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
